@@ -276,8 +276,6 @@ function renderHome(labData) {
         }
     }
 
-    renderEducation(labData);
-
     // Contact
     const contactContainer = document.getElementById('home-contact');
     if (contactContainer && labData.lab) {

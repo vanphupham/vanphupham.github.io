@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION on every deploy to purge stale caches.
  */
 
-const CACHE_VERSION = 'pvp-v19';
+const CACHE_VERSION = 'pvp-v20';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
