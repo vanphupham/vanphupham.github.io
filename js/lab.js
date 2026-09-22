@@ -273,6 +273,8 @@ function renderHome(labData) {
         }
     }
 
+    renderEducation(labData);
+
     // Contact
     const contactContainer = document.getElementById('home-contact');
     if (contactContainer && labData.lab) {
@@ -291,10 +293,45 @@ function renderHome(labData) {
                 ${link('fas fa-graduation-cap', lab.googleScholar, 'Google Scholar')}
                 ${link('fab fa-orcid', lab.orcid, 'ORCID')}
                 ${link('fab fa-researchgate', lab.researchgate, 'ResearchGate')}
+                ${link('fas fa-flask', lab.labWebsite, lab.labName || 'Lab website')}
             </div>
         `;
     }
 
+}
+
+function renderEducation(labData) {
+    const el = document.getElementById('home-education');
+    if (!el) return;
+    const items = (labData && labData.education) || [];
+    if (items.length === 0) { el.innerHTML = ''; return; }
+
+    const link = (o) => o && o.url
+        ? `<a href="${escHtml(o.url)}" target="_blank" rel="noopener">${escHtml(o.name)}</a>`
+        : (o ? escHtml(o.name) : '');
+
+    el.innerHTML = `<ol class="edu-timeline">` + items.map(e => {
+        const meta = [];
+        if (e.gpa) meta.push(`<p class="edu-line"><span class="edu-key">GPA:</span> ${escHtml(e.gpa)}</p>`);
+        if (e.thesis) meta.push(`<p class="edu-line">Thesis on <em>${escHtml(e.thesis)}</em>.</p>`);
+
+        const credits = [];
+        if (e.advisor) credits.push(`Supervised by ${link(e.advisor)}`);
+        if (e.lab) credits.push(`${link(e.lab)}`);
+        if (credits.length) meta.push(`<p class="edu-line">${credits.join(' &middot; ')}.</p>`);
+
+        return `
+        <li class="edu-item">
+            <span class="edu-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+            <div class="edu-body">
+                <h3 class="edu-degree">${escHtml(e.degree)}</h3>
+                <p class="edu-school">${escHtml(e.institution)}${
+                    e.location ? `, ${escHtml(e.location)}` : ''}</p>
+                ${e.period ? `<p class="edu-period">${escHtml(e.period)}</p>` : ''}
+                ${meta.join('')}
+            </div>
+        </li>`;
+    }).join('') + `</ol>`;
 }
 
 function renderScholarMetrics(labData) {

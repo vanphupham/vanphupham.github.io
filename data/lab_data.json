@@ -18,7 +18,9 @@
       "PV Phu"
     ],
     "orcid": "https://orcid.org/0009-0007-0609-6583",
-    "researchgate": "https://www.researchgate.net/profile/Pham-Phu-8"
+    "researchgate": "https://www.researchgate.net/profile/Pham-Phu-8",
+    "labWebsite": "https://dhkim-sch.github.io/iot-network-lab-sch/",
+    "labName": "IoT Network Lab, Soonchunhyang University"
   },
   "news": [
     {
@@ -216,5 +218,35 @@
       }
     }
   },
-  "researchIntro": "My research interests are mathematical optimization and large language models for energy management — spanning energy hubs, eco-industrial parks, microgrid operation, decision-making under uncertainty, and AI-driven energy management for the smart grid."
+  "researchIntro": "My research interests are mathematical optimization and large language models for energy management — spanning energy hubs, eco-industrial parks, microgrid operation, decision-making under uncertainty, and AI-driven energy management for the smart grid.",
+  "education": [
+    {
+      "degree": "Integrated M.S./Ph.D. in Future Convergence Technology",
+      "institution": "Soonchunhyang University",
+      "location": "Asan, Republic of Korea",
+      "period": "March 2023 – Present",
+      "gpa": "",
+      "thesis": "",
+      "advisor": {
+        "name": "Prof. Daehee Kim",
+        "url": "https://scholar.google.com/citations?user=MJcazXsAAAAJ&hl=en"
+      },
+      "lab": {
+        "name": "IoT Network Lab",
+        "url": "https://dhkim-sch.github.io/iot-network-lab-sch/"
+      }
+    },
+    {
+      "degree": "B.S. in Control Engineering and Automation",
+      "institution": "Danang University of Science and Technology",
+      "location": "Da Nang, Vietnam",
+      "period": "Graduated 2022",
+      "gpa": "",
+      "thesis": "",
+      "advisor": {
+        "name": "Assoc. Prof. Tien Dung Le",
+        "url": "https://scholar.google.com/citations?user=OBUh6TUAAAAJ&hl=en"
+      }
+    }
+  ]
 }

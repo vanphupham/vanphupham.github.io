@@ -1921,3 +1921,112 @@
         width: 20px;
     }
 }
+
+/* ===================================
+   Education timeline
+   =================================== */
+.edu-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.edu-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-lg);
+}
+
+/* the connecting rail, drawn from each icon down to the next */
+.edu-item::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 38px;
+    bottom: 0;
+    width: 1.5px;
+    background: var(--border-color);
+}
+
+.edu-item:last-child {
+    padding-bottom: 0;
+}
+
+.edu-item:last-child::before {
+    display: none;
+}
+
+.edu-icon {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-tint);
+    border: 1.5px solid var(--brand);
+    color: var(--brand);
+    font-size: 0.95rem;
+}
+
+.edu-degree {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.edu-school {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+.edu-period {
+    font-family: 'Fira Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+.edu-line {
+    margin-top: var(--spacing-xs);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.edu-key {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.edu-line a {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-fast);
+}
+
+.edu-line a:hover {
+    border-bottom-color: var(--brand);
+}
+
+@media (max-width: 640px) {
+    .edu-item {
+        grid-template-columns: 34px 1fr;
+    }
+    .edu-item::before {
+        left: 16px;
+        top: 32px;
+    }
+    .edu-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
