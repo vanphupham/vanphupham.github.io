@@ -94,8 +94,10 @@ function loadSharedComponents() {
 // Theme
 // ===================================
 function initTheme() {
+    // Light is the default. Dark only when the visitor has chosen it here —
+    // the OS colour-scheme preference no longer flips the site on its own.
     const saved = localStorage.getItem(THEME_KEY);
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (saved === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
         updateThemeIcon('dark');
     }
@@ -273,6 +275,7 @@ function renderHome(labData) {
         }
     }
 
+    renderExperience(labData);
     renderEducation(labData);
 
     // Contact
@@ -300,38 +303,98 @@ function renderHome(labData) {
 
 }
 
+// "3 yrs 7 mos" style duration, counted inclusively like LinkedIn does.
+function durationSince(startISO) {
+    const m = /^(\d{4})-(\d{2})$/.exec(String(startISO || ''));
+    if (!m) return '';
+    const start = new Date(Number(m[1]), Number(m[2]) - 1);
+    const now = new Date();
+    let months = (now.getFullYear() - start.getFullYear()) * 12
+               + (now.getMonth() - start.getMonth()) + 1;
+    if (months <= 0) return '';
+    const yrs = Math.floor(months / 12), mos = months % 12;
+    const out = [];
+    if (yrs) out.push(`${yrs} yr${yrs > 1 ? 's' : ''}`);
+    if (mos) out.push(`${mos} mo${mos > 1 ? 's' : ''}`);
+    return out.join(' ');
+}
+
+function timelineLink(o) {
+    if (!o) return '';
+    return o.url
+        ? `<a href="${escHtml(o.url)}" target="_blank" rel="noopener">${escHtml(o.name)}</a>`
+        : escHtml(o.name);
+}
+
+function timelineItem(o) {
+    const extra = [];
+    if (o.gpa) extra.push(`<p class="edu-line"><span class="edu-key">GPA:</span> ${escHtml(o.gpa)}</p>`);
+    if (o.summary) extra.push(`<p class="edu-line">${escHtml(o.summary)}</p>`);
+    if (o.thesis) extra.push(`<p class="edu-line">Thesis on <em>${escHtml(o.thesis)}</em>.</p>`);
+
+    const credits = [];
+    if (o.advisor) credits.push(`Supervised by ${timelineLink(o.advisor)}`);
+    if (o.lab) credits.push(timelineLink(o.lab));
+    if (credits.length) extra.push(`<p class="edu-line">${credits.join(' &middot; ')}.</p>`);
+
+    if (o.focus) {
+        extra.push(`<p class="edu-focus"><i class="fas fa-tag" aria-hidden="true"></i> ${escHtml(o.focus)}</p>`);
+    }
+
+    return `
+        <li class="edu-item">
+            <span class="edu-icon" aria-hidden="true"><i class="fas ${o.icon || 'fa-graduation-cap'}"></i></span>
+            <div class="edu-body">
+                <h3 class="edu-degree">${escHtml(o.title)}</h3>
+                <p class="edu-school">${escHtml(o.subtitle)}</p>
+                ${o.period ? `<p class="edu-period">${escHtml(o.period)}</p>` : ''}
+                ${extra.join('')}
+            </div>
+        </li>`;
+}
+
+function renderExperience(labData) {
+    const el = document.getElementById('home-experience');
+    if (!el) return;
+    const items = (labData && labData.experience) || [];
+    if (items.length === 0) { el.innerHTML = ''; return; }
+
+    el.innerHTML = `<ol class="edu-timeline">` + items.map(x => {
+        const dur = x.endLabel === 'Present' ? durationSince(x.start) : '';
+        const period = [
+            `${x.startLabel || ''} \u2013 ${x.endLabel || ''}`.trim(),
+            dur,
+        ].filter(Boolean).join(' \u00b7 ');
+        return timelineItem({
+            icon: 'fa-briefcase',
+            title: x.role,
+            subtitle: [x.organization, x.employmentType].filter(Boolean).join(' \u00b7 '),
+            period,
+            summary: x.summary,
+            focus: x.focus,
+            lab: x.lab,
+        });
+    }).join('') + `</ol>`;
+}
+
 function renderEducation(labData) {
     const el = document.getElementById('home-education');
     if (!el) return;
     const items = (labData && labData.education) || [];
     if (items.length === 0) { el.innerHTML = ''; return; }
 
-    const link = (o) => o && o.url
-        ? `<a href="${escHtml(o.url)}" target="_blank" rel="noopener">${escHtml(o.name)}</a>`
-        : (o ? escHtml(o.name) : '');
-
-    el.innerHTML = `<ol class="edu-timeline">` + items.map(e => {
-        const meta = [];
-        if (e.gpa) meta.push(`<p class="edu-line"><span class="edu-key">GPA:</span> ${escHtml(e.gpa)}</p>`);
-        if (e.thesis) meta.push(`<p class="edu-line">Thesis on <em>${escHtml(e.thesis)}</em>.</p>`);
-
-        const credits = [];
-        if (e.advisor) credits.push(`Supervised by ${link(e.advisor)}`);
-        if (e.lab) credits.push(`${link(e.lab)}`);
-        if (credits.length) meta.push(`<p class="edu-line">${credits.join(' &middot; ')}.</p>`);
-
-        return `
-        <li class="edu-item">
-            <span class="edu-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
-            <div class="edu-body">
-                <h3 class="edu-degree">${escHtml(e.degree)}</h3>
-                <p class="edu-school">${escHtml(e.institution)}${
-                    e.location ? `, ${escHtml(e.location)}` : ''}</p>
-                ${e.period ? `<p class="edu-period">${escHtml(e.period)}</p>` : ''}
-                ${meta.join('')}
-            </div>
-        </li>`;
-    }).join('') + `</ol>`;
+    el.innerHTML = `<ol class="edu-timeline">` + items.map(e => timelineItem({
+        icon: 'fa-graduation-cap',
+        title: e.degree,
+        subtitle: [e.institution, e.location].filter(Boolean).join(', '),
+        period: e.period,
+        gpa: e.gpa,
+        summary: e.summary,
+        thesis: e.thesis,
+        advisor: e.advisor,
+        lab: e.lab,
+        focus: e.focus,
+    })).join('') + `</ol>`;
 }
 
 function renderScholarMetrics(labData) {

@@ -2030,3 +2030,19 @@
         font-size: 0.8rem;
     }
 }
+
+/* Focus tag on a timeline entry */
+.edu-focus {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: var(--spacing-xs);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.edu-focus i {
+    font-size: 0.72rem;
+    color: var(--brand);
+}

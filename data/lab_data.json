@@ -221,10 +221,12 @@
   "researchIntro": "My research interests are mathematical optimization and large language models for energy management — spanning energy hubs, eco-industrial parks, microgrid operation, decision-making under uncertainty, and AI-driven energy management for the smart grid.",
   "education": [
     {
-      "degree": "Integrated M.S./Ph.D. in Future Convergence Technology",
+      "degree": "Ph.D. Student, Future Convergence Technology",
       "institution": "Soonchunhyang University",
       "location": "Asan, Republic of Korea",
-      "period": "March 2023 – Present",
+      "period": "Feb 2023 – 2028 (expected)",
+      "summary": "Research projects involving Energy Management, Optimization, and Hierarchical Control.",
+      "focus": "Optimization and Energy Management",
       "gpa": "",
       "thesis": "",
       "advisor": {
@@ -237,15 +239,33 @@
       }
     },
     {
-      "degree": "B.S. in Control Engineering and Automation",
+      "degree": "Bachelor's degree, Automation Engineer",
       "institution": "Danang University of Science and Technology",
       "location": "Da Nang, Vietnam",
-      "period": "Graduated 2022",
+      "period": "Aug 2017 – Aug 2022",
+      "summary": "Majored in Automation and Control Engineering at the Faculty of Electrical Engineering.",
+      "focus": "Robotics",
       "gpa": "",
       "thesis": "",
       "advisor": {
         "name": "Assoc. Prof. Tien Dung Le",
         "url": "https://scholar.google.com/citations?user=OBUh6TUAAAAJ&hl=en"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Assistant",
+      "organization": "Soonchunhyang University",
+      "employmentType": "Full-time",
+      "start": "2023-03",
+      "startLabel": "Mar 2023",
+      "endLabel": "Present",
+      "summary": "",
+      "focus": "Optimization and Energy Management",
+      "lab": {
+        "name": "IoT Network Lab",
+        "url": "https://dhkim-sch.github.io/iot-network-lab-sch/"
       }
     }
   ]
