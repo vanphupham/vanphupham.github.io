@@ -1,0 +1,21 @@
+{
+  "name": "Pham Van Phu — Energy Systems & Optimization",
+  "short_name": "PVPHU",
+  "description": "Research on integrated energy hubs, microgrids, and machine learning for energy systems at Soonchunhyang University.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2F44A8",
+  "icons": [
+    {
+      "src": "/assets/pvp-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "research"
+  ]
+}

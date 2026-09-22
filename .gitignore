@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local Claude Code / dev-server config
+.claude/
+
+# Notes about the scaffold this site was built from — local reference only
+CLONE-README.md

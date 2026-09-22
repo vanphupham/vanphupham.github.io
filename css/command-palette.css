@@ -1,0 +1,178 @@
+/* ===================================
+   Command Palette (Ctrl+K)
+   =================================== */
+
+/* Backdrop */
+#cmd-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 900;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+#cmd-backdrop.open { display: block; }
+
+/* Palette container */
+#cmd-palette {
+    display: none;
+    position: fixed;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(640px, 92vw);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 901;
+    overflow: hidden;
+    flex-direction: column;
+}
+#cmd-palette.open { display: flex; }
+
+/* Search input area */
+.cmd-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.cmd-input-wrap i {
+    color: var(--text-muted);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+#cmd-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-primary);
+    caret-color: var(--brand);
+}
+#cmd-input::placeholder { color: var(--text-muted); }
+.cmd-kbd-hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    white-space: nowrap;
+}
+
+/* Results list */
+#cmd-results {
+    list-style: none;
+    margin: 0;
+    padding: 0.4rem 0;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+#cmd-results li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+#cmd-results li:hover,
+#cmd-results li.cmd-active {
+    background: var(--bg-secondary);
+}
+
+.cmd-result-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--bg-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--brand);
+    flex-shrink: 0;
+}
+
+.cmd-result-text {
+    flex: 1;
+    min-width: 0;
+}
+.cmd-result-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cmd-result-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cmd-result-type {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: var(--bg-accent);
+    border-radius: 4px;
+    padding: 0.1rem 0.45rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Empty / hint */
+.cmd-empty {
+    padding: 1.5rem 1.1rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* Footer hint bar */
+.cmd-footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 1.1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+.cmd-footer kbd {
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-family: var(--font-sans);
+}
+
+/* Nav trigger button */
+#cmd-trigger {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+#cmd-trigger:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+}

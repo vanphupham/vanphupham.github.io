@@ -1,0 +1,214 @@
+{
+  "lab": {
+    "name": "Pham Van Phu",
+    "fullName": "Pham Van Phu",
+    "affiliation": "Department of Future Convergence Technology, Soonchunhyang University",
+    "office": "",
+    "laboratory": "IoT Network Lab — ML 413, Media Labs, 22-19 Suncheonhyang-ro, Sinchang-myeon, Asan-si, Chungcheongnam-do, Republic of Korea",
+    "email": "pvphu@sch.ac.kr",
+    "cvUrl": "",
+    "github": "",
+    "linkedin": "https://www.linkedin.com/in/vanphupham99/",
+    "googleScholar": "https://scholar.google.com/citations?user=XVB__6gAAAAJ&hl=en",
+    "description": "Research at the intersection of mathematical optimization and machine learning for energy systems — integrated energy hubs, microgrids, and their operation under deep uncertainty.",
+    "nameAliases": [
+      "Pham Van Phu",
+      "Van Phu Pham",
+      "P Van Phu",
+      "PV Phu"
+    ],
+    "orcid": "https://orcid.org/0009-0007-0609-6583",
+    "researchgate": "https://www.researchgate.net/profile/Pham-Phu-8"
+  },
+  "news": [
+    {
+      "date": "2026-03",
+      "title": "Paper accepted in Gas Science and Engineering",
+      "content": "Paper: \"Multi-objective framework for integrated energy hubs using IGDT: Incorporating liquefied natural gas-fueled oxy-fuel combined cycle and P2G technologies\" accepted for publication in Gas Science and Engineering."
+    },
+    {
+      "date": "2026-01",
+      "title": "Paper accepted in Sustainable Energy, Grids and Networks",
+      "content": "Paper: \"A multi-objective approach for integrated energy hub with waste incineration plants integrating carbon capture technology, and electric vehicle parking lots under uncertainties\" accepted for publication in Sustainable Energy, Grids and Networks."
+    },
+    {
+      "date": "2025-12",
+      "title": "Paper accepted in International Journal of Energy Research",
+      "content": "Paper: \"Multi-Objective Energy Management for an Integrated Energy System With Small Modular Reactors Considering Uncertainty\" accepted at International Journal of Energy Research."
+    },
+    {
+      "date": "2025-08",
+      "title": "Paper accepted in Knowledge-Based Systems",
+      "content": "Paper: \"Multi-Class Intrusion Detection System for In-Vehicle Networks Using Few-Shot Learning and Convolutional Anomaly Transformer Network\" accepted for publication in Knowledge-Based Systems."
+    },
+    {
+      "date": "2025-05",
+      "title": "Paper accepted in Engineering Applications of Artificial Intelligence",
+      "content": "Paper: \"Advanced deep learning-based electricity theft detection in smart grids using multi-dimensional analysis with Convolutional Autoencoder and Transformer\" accepted for publication in Engineering Applications of Artificial Intelligence."
+    },
+    {
+      "date": "2024-07",
+      "title": "Paper accepted in Applied Energy",
+      "content": "Paper: \"Robust real-time energy management for a hydrogen refueling station using generative adversarial imitation learning\" accepted for publication in Applied Energy."
+    },
+    {
+      "date": "2024-06",
+      "title": "Paper accepted in Knowledge-Based Systems",
+      "content": "Paper: \"Multi-Classification In-Vehicle Intrusion Detection System using Packet- and Sequence-Level Characteristics from Time-Embedded Transformer with Autoencoder\" accepted for publication in Knowledge-Based Systems."
+    },
+    {
+      "date": "2024-03",
+      "title": "Two papers accepted in Journal of Energy Storage",
+      "content": "Two papers: \"An IGDT approach for the multi-objective framework of integrated energy hub with renewable energy sources, hybrid energy storage systems, and biomass-to-hydrogen technology\" and \"Real-time power scheduling for an isolated microgrid with renewable energy and energy storage system via a supervised-learning-based strategy\" accepted for publication in Journal of Energy Storage."
+    },
+    {
+      "date": "2023-03",
+      "title": "Joined the IoT Network Lab, Soonchunhyang University",
+      "content": "Joined the IoT Network Lab, Soonchunhyang University as an Integrated Master's/Ph.D. Student."
+    }
+  ],
+  "projects": [],
+  "research": [
+    {
+      "title": "Energy Hubs & Eco-Industrial Parks",
+      "details": "Designing and operating systems that couple electricity, heat, gas, and hydrogen in a single scheduling problem — from integrated energy hubs to eco-industrial parks where co-located plants trade energy and material streams. Incorporates biomass-to-hydrogen, power-to-gas, LNG-fuelled oxy-fuel combined cycles, carbon capture, and small modular reactors.",
+      "keywords": [
+        "Energy Hub",
+        "Eco-Industrial Park",
+        "Multi-Energy Systems",
+        "Power-to-Gas",
+        "Hydrogen",
+        "Carbon Capture"
+      ],
+      "icon": "fa-diagram-project"
+    },
+    {
+      "title": "Microgrid Operation & Energy Management",
+      "details": "Real-time operation and scheduling for isolated microgrids and hydrogen refuelling stations that pair renewable generation with hybrid storage. Learning-based policies — supervised strategies and generative adversarial imitation learning — keep dispatch decisions fast enough for online use.",
+      "keywords": [
+        "Microgrid",
+        "Energy Management",
+        "Hierarchical Control",
+        "Real-Time Scheduling",
+        "Energy Storage"
+      ],
+      "icon": "fa-sliders"
+    },
+    {
+      "title": "Optimization under Deep Uncertainty",
+      "details": "Multi-objective frameworks that hold up when renewable output, demand, and prices cannot be forecast reliably. Information-gap decision theory trades guaranteed performance against tolerance to forecast error without assuming a probability distribution.",
+      "keywords": [
+        "IGDT",
+        "Multi-Objective Optimization",
+        "Robust Optimization",
+        "Uncertainty"
+      ],
+      "icon": "fa-chart-line"
+    },
+    {
+      "title": "LLMs for Energy Management",
+      "details": "Exploring how large language models can support energy system operation: interpreting heterogeneous operational and market data, reasoning over scheduling constraints stated in natural language, and assisting dispatch decisions for the smart grid alongside conventional optimization.",
+      "keywords": [
+        "Large Language Models",
+        "AI-Driven Energy Management",
+        "Smart Grid",
+        "Decision Support"
+      ],
+      "icon": "fa-comments"
+    }
+  ],
+  "scholar": {
+    "url": "https://scholar.google.com/citations?user=XVB__6gAAAAJ&hl=en",
+    "updated": "2026-09-22",
+    "citations": 174,
+    "hIndex": 5,
+    "i10Index": 4,
+    "perYear": [
+      {
+        "year": "2024",
+        "count": 25
+      },
+      {
+        "year": "2025",
+        "count": 73
+      },
+      {
+        "year": "2026",
+        "count": 73
+      }
+    ]
+  },
+  "journalMetrics": {
+    "Journal of Energy Storage": {
+      "2024": {
+        "impact_factor": "9.8",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Energy & Fuels",
+        "index": "SCIE"
+      }
+    },
+    "Applied Energy": {
+      "2024": {
+        "impact_factor": "11.0",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Energy & Fuels",
+        "index": "SCIE"
+      }
+    },
+    "Knowledge-Based Systems": {
+      "2024": {
+        "impact_factor": "7.6",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Computer Science, Artificial Intelligence",
+        "index": "SCIE"
+      },
+      "2025": {
+        "impact_factor": "8.0",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Computer Science, Artificial Intelligence",
+        "index": "SCIE"
+      }
+    },
+    "Engineering Applications of Artificial Intelligence": {
+      "2025": {
+        "impact_factor": "7.7",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Computer Science, Artificial Intelligence",
+        "index": "SCIE"
+      }
+    },
+    "International Journal of Energy Research": {
+      "2026": {
+        "impact_factor": "4.2",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Nuclear Science & Technology",
+        "index": "SCIE"
+      }
+    },
+    "Sustainable Energy, Grids and Networks": {
+      "2026": {
+        "impact_factor": "5.7",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Electrical and Electronic Engineering",
+        "index": "SCIE"
+      }
+    },
+    "Gas Science and Engineering": {
+      "2026": {
+        "impact_factor": "6.8",
+        "jcr_quantile": "Q1",
+        "jcr_ranking": "",
+        "jcr_field": "Energy Engineering and Power Technology",
+        "index": "SCIE"
+      }
+    }
+  },
+  "researchIntro": "My research interests are mathematical optimization and large language models for energy management — spanning energy hubs, eco-industrial parks, microgrid operation, decision-making under uncertainty, and AI-driven energy management for the smart grid."
+}
