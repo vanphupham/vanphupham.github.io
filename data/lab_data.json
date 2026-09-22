@@ -136,7 +136,13 @@
         "year": "2026",
         "count": 73
       }
-    ]
+    ],
+    "since": {
+      "year": "2021",
+      "citations": 174,
+      "hIndex": 5,
+      "i10Index": 4
+    }
   },
   "journalMetrics": {
     "Journal of Energy Storage": {

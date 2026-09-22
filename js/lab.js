@@ -307,30 +307,46 @@ function renderScholarMetrics(labData) {
     const max = Math.max(1, ...years.map(y => y.count));
     const altText = years.map(y => `${y.year}: ${y.count}`).join(', ');
     const bars = years.map(y => `
-        <div class="cite-bar-col">
-            <span class="cite-bar-val">${y.count}</span>
-            <div class="cite-bar" style="height:${Math.round((y.count / max) * 100)}%"></div>
-            <span class="cite-bar-year">${escHtml(y.year)}</span>
+        <div class="gs-bar-col">
+            <span class="gs-bar-val">${y.count}</span>
+            <div class="gs-bar" style="height:${Math.round((y.count / max) * 100)}%"></div>
+            <span class="gs-bar-year">${escHtml(y.year)}</span>
         </div>`).join('');
 
-    const stat = (n, label) =>
-        `<div class="cite-stat"><span class="cite-stat-num">${escHtml(String(n))}</span>` +
-        `<span class="cite-stat-label">${escHtml(label)}</span></div>`;
+    const since = s.since || null;
+    const row = (label, all, sinceVal) => `
+        <tr>
+            <th scope="row">${escHtml(label)}</th>
+            <td>${escHtml(String(all))}</td>
+            ${since ? `<td>${escHtml(String(sinceVal))}</td>` : ''}
+        </tr>`;
 
     el.innerHTML = `
-        <div class="cite-wrap">
-            <div class="cite-stats">
-                ${stat(s.citations, 'Citations')}
-                ${stat(s.hIndex, 'h-index')}
-                ${stat(s.i10Index, 'i10-index')}
+        <div class="gs-box">
+            <div class="gs-head">Cited by</div>
+            <div class="gs-body">
+                <table class="gs-table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">All</th>
+                            ${since ? `<th scope="col">Since ${escHtml(since.year)}</th>` : ''}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${row('Citations', s.citations, since && since.citations)}
+                        ${row('h-index', s.hIndex, since && since.hIndex)}
+                        ${row('i10-index', s.i10Index, since && since.i10Index)}
+                    </tbody>
+                </table>
+                ${years.length ? `<div class="gs-chart" role="img"
+                     aria-label="Citations per year — ${escHtml(altText)}">${bars}</div>` : ''}
             </div>
-            ${years.length ? `<div class="cite-chart" role="img"
-                 aria-label="Citations per year — ${escHtml(altText)}">${bars}</div>` : ''}
-        </div>
-        <p class="cite-source">
-            Source: <a href="${escHtml(s.url)}" target="_blank" rel="noopener">Google Scholar</a>${
-                s.updated ? ` &middot; snapshot of ${escHtml(s.updated)}` : ''}
-        </p>`;
+            <p class="gs-source">
+                Source: <a href="${escHtml(s.url)}" target="_blank" rel="noopener">Google Scholar</a>${
+                    s.updated ? ` &middot; snapshot of ${escHtml(s.updated)}` : ''}
+            </p>
+        </div>`;
 }
 
 function renderNews(labData) {
