@@ -9,7 +9,7 @@
  * Bump CACHE_VERSION on every deploy to purge stale caches.
  */
 
-const CACHE_VERSION = 'pvp-v18';
+const CACHE_VERSION = 'pvp-v19';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -20,6 +20,7 @@ const HTML_ROUTES = [
     '/research/',
     '/publications/',
     '/projects/',
+    '/experience/',
 ];
 
 // Assets pre-cached on install (images only — CSS/JS handled at runtime)

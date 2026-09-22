@@ -25,10 +25,11 @@
     // -----------------------------------------------
     const STATIC_PAGES = [
         { label: 'Home',         url: '/',              type: 'page', sub: 'Homepage' },
-        { label: 'News',         url: '/news/',         type: 'page', sub: 'Lab announcements' },
+        { label: 'News',         url: '/news/',         type: 'page', sub: 'News and updates' },
         { label: 'Research',     url: '/research/',     type: 'page', sub: 'Research areas' },
         { label: 'Publications', url: '/publications/', type: 'page', sub: 'Journal and conference papers' },
         { label: 'Projects',     url: '/projects/',     type: 'page', sub: 'Funded research projects' },
+        { label: 'Experience',   url: '/experience/',   type: 'page', sub: 'Positions and education' },
     ];
 
     let _index = [];          // full search index

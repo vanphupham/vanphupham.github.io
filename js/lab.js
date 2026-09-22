@@ -66,8 +66,9 @@ function loadSharedComponents() {
         <ul class="nav-links">
             <li><a href="/news/">News</a></li>
             <li><a href="/research/">Research</a></li>
-            <li><a href="/projects/">Projects</a></li>
             <li><a href="/publications/">Publications</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/experience/">Experience</a></li>
         </ul>
         <button id="darkModeToggle" class="nav-dark-toggle" aria-label="Toggle dark mode">
             <i class="fas fa-moon"></i>
@@ -275,7 +276,6 @@ function renderHome(labData) {
         }
     }
 
-    renderExperience(labData);
     renderEducation(labData);
 
     // Contact
@@ -1302,6 +1302,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 break;
             case 'news':    renderNews(labData); break;
             case 'research': renderResearch(labData); break;
+            case 'experience':
+                renderExperience(labData);
+                renderEducation(labData);
+                break;
             case 'publications':
                 renderPublications(cvData, labData);
                 renderScholarMetrics(labData);
