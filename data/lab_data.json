@@ -121,9 +121,9 @@
   ],
   "scholar": {
     "url": "https://scholar.google.com/citations?user=XVB__6gAAAAJ&hl=en",
-    "updated": "2026-09-22",
-    "citations": 174,
-    "hIndex": 5,
+    "updated": "2026-10-22",
+    "citations": 184,
+    "hIndex": 6,
     "i10Index": 4,
     "perYear": [
       {
@@ -136,13 +136,13 @@
       },
       {
         "year": "2026",
-        "count": 73
+        "count": 83
       }
     ],
     "since": {
       "year": "2021",
-      "citations": 174,
-      "hIndex": 5,
+      "citations": 184,
+      "hIndex": 6,
       "i10Index": 4
     }
   },
@@ -267,6 +267,22 @@
         "name": "IoT Network Lab",
         "url": "https://dhkim-sch.github.io/iot-network-lab-sch/"
       }
+    }
+  ],
+  "academicServices": [
+    {
+      "role": "Reviewer",
+      "venue": "Applied Energy",
+      "publisher": "Elsevier",
+      "period": "",
+      "url": "https://www.sciencedirect.com/journal/applied-energy"
+    },
+    {
+      "role": "Reviewer",
+      "venue": "Computer Modeling in Engineering & Sciences (CMES)",
+      "publisher": "Tech Science Press",
+      "period": "",
+      "url": "https://www.techscience.com/journal/CMES"
     }
   ]
 }

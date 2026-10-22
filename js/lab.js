@@ -344,7 +344,7 @@ function timelineItem(o) {
             <span class="edu-icon" aria-hidden="true"><i class="fas ${o.icon || 'fa-graduation-cap'}"></i></span>
             <div class="edu-body">
                 <h3 class="edu-degree">${escHtml(o.title)}</h3>
-                <p class="edu-school">${escHtml(o.subtitle)}</p>
+                <p class="edu-school">${o.subtitleHtml || escHtml(o.subtitle)}</p>
                 ${o.period ? `<p class="edu-period">${escHtml(o.period)}</p>` : ''}
                 ${extra.join('')}
             </div>
@@ -371,6 +371,24 @@ function renderExperience(labData) {
             summary: x.summary,
             focus: x.focus,
             lab: x.lab,
+        });
+    }).join('') + `</ol>`;
+}
+
+function renderAcademicServices(labData) {
+    const el = document.getElementById('home-services');
+    if (!el) return;
+    const items = (labData && labData.academicServices) || [];
+    if (items.length === 0) { el.innerHTML = ''; return; }
+
+    el.innerHTML = `<ol class="edu-timeline">` + items.map(a => {
+        const venue = a.url ? timelineLink({ name: a.venue, url: a.url }) : escHtml(a.venue);
+        return timelineItem({
+            icon: 'fa-file-pen',
+            title: a.role,
+            subtitleHtml: [venue, a.publisher ? escHtml(a.publisher) : '']
+                .filter(Boolean).join(' &middot; '),
+            period: a.period,
         });
     }).join('') + `</ol>`;
 }
@@ -1303,6 +1321,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             case 'experience':
                 renderExperience(labData);
                 renderEducation(labData);
+                renderAcademicServices(labData);
                 break;
             case 'publications':
                 renderPublications(cvData, labData);
