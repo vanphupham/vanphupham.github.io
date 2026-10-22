@@ -271,17 +271,23 @@
   ],
   "academicServices": [
     {
-      "role": "Reviewer",
+      "venue": "IEEE Transactions on Power Systems",
+      "publisher": "IEEE",
+      "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=59"
+    },
+    {
       "venue": "Applied Energy",
       "publisher": "Elsevier",
-      "period": "",
       "url": "https://www.sciencedirect.com/journal/applied-energy"
     },
     {
-      "role": "Reviewer",
+      "venue": "Energy Engineering",
+      "publisher": "Tech Science Press",
+      "url": "https://www.techscience.com/journal/energy"
+    },
+    {
       "venue": "Computer Modeling in Engineering & Sciences (CMES)",
       "publisher": "Tech Science Press",
-      "period": "",
       "url": "https://www.techscience.com/journal/CMES"
     }
   ]

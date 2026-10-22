@@ -2046,3 +2046,54 @@
     font-size: 0.72rem;
     color: var(--brand);
 }
+
+/* ===================================
+   Academic Services — plain list
+   =================================== */
+.svc-intro {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.svc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.svc-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.4rem 0 0.4rem 0.95rem;
+    border-left: 2px solid var(--border-color);
+    font-size: 0.93rem;
+}
+
+.svc-item:hover {
+    border-left-color: var(--brand);
+}
+
+.svc-venue a {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-fast);
+}
+
+.svc-venue a:hover {
+    border-bottom-color: var(--brand);
+}
+
+.svc-pub,
+.svc-period {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.svc-period {
+    font-family: 'Fira Mono', 'Courier New', monospace;
+}

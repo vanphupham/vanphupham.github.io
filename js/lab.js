@@ -381,16 +381,18 @@ function renderAcademicServices(labData) {
     const items = (labData && labData.academicServices) || [];
     if (items.length === 0) { el.innerHTML = ''; return; }
 
-    el.innerHTML = `<ol class="edu-timeline">` + items.map(a => {
-        const venue = a.url ? timelineLink({ name: a.venue, url: a.url }) : escHtml(a.venue);
-        return timelineItem({
-            icon: 'fa-file-pen',
-            title: a.role,
-            subtitleHtml: [venue, a.publisher ? escHtml(a.publisher) : '']
-                .filter(Boolean).join(' &middot; '),
-            period: a.period,
-        });
-    }).join('') + `</ol>`;
+    const rows = items.map(a => {
+        const venue = a.url
+            ? `<a href="${escHtml(a.url)}" target="_blank" rel="noopener">${escHtml(a.venue)}</a>`
+            : escHtml(a.venue);
+        const pub = a.publisher ? `<span class="svc-pub">${escHtml(a.publisher)}</span>` : '';
+        const when = a.period ? `<span class="svc-period">${escHtml(a.period)}</span>` : '';
+        return `<li class="svc-item"><span class="svc-venue">${venue}</span>${pub}${when}</li>`;
+    }).join('');
+
+    el.innerHTML = `
+        <p class="svc-intro">Peer reviewer for:</p>
+        <ul class="svc-list">${rows}</ul>`;
 }
 
 function renderEducation(labData) {
