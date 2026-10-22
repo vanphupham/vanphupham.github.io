@@ -2088,12 +2088,7 @@
     border-bottom-color: var(--brand);
 }
 
-.svc-pub,
-.svc-period {
+.svc-pub {
     font-size: 0.8rem;
     color: var(--text-muted);
-}
-
-.svc-period {
-    font-family: 'Fira Mono', 'Courier New', monospace;
 }

@@ -386,8 +386,7 @@ function renderAcademicServices(labData) {
             ? `<a href="${escHtml(a.url)}" target="_blank" rel="noopener">${escHtml(a.venue)}</a>`
             : escHtml(a.venue);
         const pub = a.publisher ? `<span class="svc-pub">${escHtml(a.publisher)}</span>` : '';
-        const when = a.period ? `<span class="svc-period">${escHtml(a.period)}</span>` : '';
-        return `<li class="svc-item"><span class="svc-venue">${venue}</span>${pub}${when}</li>`;
+        return `<li class="svc-item"><span class="svc-venue">${venue}</span>${pub}</li>`;
     }).join('');
 
     el.innerHTML = `
